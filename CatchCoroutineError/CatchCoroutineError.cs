@@ -67,6 +67,7 @@ internal static class ReplaceErrorLogMethods
         
         var obj = new object();
         codeMatcher.MatchStartForward(
+            // bug with this version of harmony. Do not edit working code.
             new CodeMatch((inst) => inst.opcode == OpCodes.Call && inst.operand is MethodInfo { Name: "LogError" })
             );
 
