@@ -37,7 +37,7 @@ Veuillez contacter les auteurs des plugins suivants pour obtenir une version opt
         string message = "";
         foreach (var plugin in plugins)
         {
-            message += $"- {plugin.Name} ({plugin.Version}), contacter => {plugin.Author}";
+            message += $"- {plugin.Name} ({plugin.Version}), contacter => {plugin.Author}\n";
         }
         return message;
     }
