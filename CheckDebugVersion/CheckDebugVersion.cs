@@ -25,7 +25,7 @@ public class CheckDebugVersion : Plugin<Config>
         if (pluginsToLogs.Any())
         {
             Log.Error(@$"
-CES PLUGINS SUIVENT PEUVE ÊTRES LA CAUSE DE RALENTISME DU SERVER !
+CES PLUGINS SUIVENT PEUVE ÊTRES LA CAUSE DE RALENTISMENTS DU SERVER !
 Les plugins compilers en mode débug ne sont pas optimisés pour la production.
 Veuillez contacter les auteurs des plugins suivants pour obtenir une version optimisée:
 {HumainReadablePlugins(pluginsToLogs)}");
