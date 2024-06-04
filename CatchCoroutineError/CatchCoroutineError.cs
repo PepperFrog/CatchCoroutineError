@@ -5,11 +5,11 @@ using MEC;
 
 namespace CatchCoroutineError;
 
-public class CatchCoroutineError : Plugin<Config>
+public class CatchCoroutineError : Plugin<CatchCoroutineError.PluginConfig>
 {
 
     private Harmony Harmony { get; set; }
-    
+
     public override string Name { get; } = PluginInfo.PLUGIN_NAME;
 
     public override string Prefix { get; } = PluginInfo.PLUGIN_NAME;
@@ -25,10 +25,14 @@ public class CatchCoroutineError : Plugin<Config>
         Harmony.DEBUG = Config.Debug;
         Harmony = new Harmony(PluginInfo.PLUGIN_GUID);
         Harmony.PatchAll();
+
+        base.OnEnabled();
     }
     public override void OnDisabled()
     {
-        Harmony.UnpatchAll();
+        Harmony.UnpatchAll(Harmony.Id);
+
+        base.OnDisabled();
     }
 
     public class PluginConfig : IConfig

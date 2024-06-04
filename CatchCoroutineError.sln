@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatchCoroutineError", "CatchCoroutineError\CatchCoroutineError.csproj", "{ED189499-4EFD-4FE1-B5D5-CAED4CBA2FCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckDebugVersion", "CheckDebugVersion\CheckDebugVersion.csproj", "{5A859B0C-C2C2-4F61-BF83-6482482023EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckDebugVersion", "CheckDebugVersion\CheckDebugVersion.csproj", "{5A859B0C-C2C2-4F61-BF83-6482482023EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForgetButReset", "ForgetButReset\ForgetButReset.csproj", "{1F317F05-7506-4587-985C-FB5725D3F604}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5A859B0C-C2C2-4F61-BF83-6482482023EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A859B0C-C2C2-4F61-BF83-6482482023EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A859B0C-C2C2-4F61-BF83-6482482023EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F317F05-7506-4587-985C-FB5725D3F604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F317F05-7506-4587-985C-FB5725D3F604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F317F05-7506-4587-985C-FB5725D3F604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F317F05-7506-4587-985C-FB5725D3F604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
