@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Title>ForgetButReset</Title>
+		<AssemblyName>$(Title)</AssemblyName>
+		<Product>Forget But Reset</Product>
+		<Version>1.0.0</Version>
+		<Authors>VT</Authors>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<TargetFramework>net48</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<DebugType>embedded</DebugType>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<Configurations>Debug;Release</Configurations>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp-firstpass" HintPath="$(SL_REFERENCES)\Assembly-CSharp-firstpass.dll" />
+		<Reference Include="CommandSystem.Core" HintPath="$(SL_REFERENCES)\CommandSystem.Core.dll" />
+		<Reference Include="Mirror" HintPath="$(SL_REFERENCES)\Mirror.dll" />
+		<Reference Include="Pooling" HintPath="$(SL_REFERENCES)\Pooling.dll" />
+		<Reference Include="UnityEngine.PhysicsModule" HintPath="$(SL_REFERENCES)\UnityEngine.PhysicsModule.dll" />
+		<Reference Include="UnityEngine.CoreModule" HintPath="$(SL_REFERENCES)\UnityEngine.CoreModule.dll" />
+	</ItemGroup>
+	<Import Project="..\global.props" />
+	<ItemGroup>
+		<PackageReference Include="EXILED" Version="8.7.0" />
+		<PackageReference Include="Lib.Harmony" Version="2.2.2" />
+	</ItemGroup>
+</Project>

@@ -3,7 +3,7 @@ using Exiled.API.Features;
 
 namespace CheckDebugVersion;
 
-public class CheckDebugVersion : Plugin<Config>
+public class CheckDebugVersion : Plugin<CheckDebugVersion.PluginConfig>
 {
 
     private Harmony Harmony { get; set; }
@@ -30,6 +30,8 @@ Les plugins compilers en mode débug ne sont pas optimisés pour la production.
 Veuillez contacter les auteurs des plugins suivants pour obtenir une version optimisée:
 {HumainReadablePlugins(pluginsToLogs)}");
         }
+
+        base.OnEnabled();
     }
 
     public string HumainReadablePlugins(IEnumerable<IPlugin<IConfig>> plugins)
