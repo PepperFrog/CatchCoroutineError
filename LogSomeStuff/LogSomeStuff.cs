@@ -1,6 +1,9 @@
-﻿namespace ForgetButReset;
+﻿using AdminToys;
+using MEC;
 
-public class ForgetButReset : Plugin<ForgetButReset.PluginConfig>
+namespace LogSomeStuff;
+
+public class LogSomeStuff : Plugin<LogSomeStuff.PluginConfig>
 {
     public override string Name { get; } = PluginInfo.PLUGIN_NAME;
 
@@ -14,30 +17,17 @@ public class ForgetButReset : Plugin<ForgetButReset.PluginConfig>
 
     public override void OnEnabled()
     {
-        ServerEvents.WaitingForPlayers.Subscribe(OnWaiting);
-
         base.OnEnabled();
-    }
-
-    private void OnWaiting()
-    {
-        Server.FriendlyFire = Config.FrendlyFireDefault;
-        Round.IsLobbyLocked = false;
-        Round.IsLocked = false;
     }
 
     public override void OnDisabled()
     {
-        ServerEvents.WaitingForPlayers.Unsubscribe(OnWaiting);
-
         base.OnDisabled();
     }
 
     public class PluginConfig : IConfig
     {
         public bool IsEnabled { get; set; } = true;
-        
-        public bool FrendlyFireDefault { get; set; } = false;
 
         public bool Debug
         {
