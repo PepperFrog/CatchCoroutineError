@@ -23,7 +23,7 @@
 	</ItemGroup>
 	<Import Project="..\global.props" />
 	<ItemGroup>
-		<PackageReference Include="EXILED" Version="8.7.0" />
+		<PackageReference Include="EXILED" Version="8.9.11" />
 		<PackageReference Include="Lib.Harmony" Version="2.2.2" />
 	</ItemGroup>
 </Project>

@@ -1,6 +1,11 @@
-﻿namespace ForgetButReset;
+﻿using AdminToys;
+using Exiled.API.Features.Toys;
+using MEC;
+using OptiPrimitves;
 
-public class ForgetButReset : Plugin<ForgetButReset.PluginConfig>
+namespace OptiPrimitves;
+
+public class OptiPrimitves : Plugin<OptiPrimitves.PluginConfig>
 {
     public override string Name { get; } = PluginInfo.PLUGIN_NAME;
 
@@ -14,30 +19,32 @@ public class ForgetButReset : Plugin<ForgetButReset.PluginConfig>
 
     public override void OnEnabled()
     {
-        ServerEvents.WaitingForPlayers.Subscribe(OnWaiting);
+        ServerEvents.RoundStarted.Subscribe(Start);
 
         base.OnEnabled();
     }
 
-    private void OnWaiting()
+    private IEnumerator<float> Start()
     {
-        Server.FriendlyFire = Config.FrendlyFireDefault;
-        Round.IsLobbyLocked = false;
-        Round.IsLocked = false;
+        yield return Timing.WaitForOneFrame;
+
+        foreach (var toy in UnityEngine.Object.FindObjectsOfType<AdminToyBase>())
+        {
+            toy.NetworkIsStatic = true;
+            toy.gameObject.SetActive(false);
+        }
     }
 
     public override void OnDisabled()
     {
-        ServerEvents.WaitingForPlayers.Unsubscribe(OnWaiting);
+        ServerEvents.RoundStarted.Subscribe(Start);
 
         base.OnDisabled();
     }
 
     public class PluginConfig : IConfig
     {
-        public bool IsEnabled { get; set; } = true;
-        
-        public bool FrendlyFireDefault { get; set; } = false;
+        public bool IsEnabled { get => true; set { } }
 
         public bool Debug
         {

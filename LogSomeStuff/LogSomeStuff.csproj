@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Title>CheckDebugVersion</Title>
+		<Title>LogSomeStuff</Title>
 		<AssemblyName>$(Title)</AssemblyName>
-		<Product>Check Debug Version</Product>
+		<Product>Log Some Stuff</Product>
 		<Version>1.0.0</Version>
 		<Authors>VT</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
